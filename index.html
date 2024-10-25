@@ -15,7 +15,7 @@
       --button-text: white;
       --deadline-color: #e74c3c;
     }
-    .dark-theme {
+    body.dark-theme {
       --bg-color: #2c3e50;
       --text-color: #ecf0f1;
       --table-header-bg: #34495e;
@@ -80,33 +80,6 @@
       opacity: 0.9;
     }
   </style>
-  <script>
-    function toggleDetails() {
-      var details = document.querySelectorAll('.details');
-      details.forEach(function(row) {
-        if (row.style.display === 'table-row') {
-          row.style.display = 'none';
-        } else {
-          row.style.display = 'table-row';
-        }
-      });
-    }
-
-    function switchLanguage(lang) {
-      var elements = document.querySelectorAll('[data-lang]');
-      elements.forEach(function(el) {
-        if (el.getAttribute('data-lang') === lang) {
-          el.style.display = '';
-        } else {
-          el.style.display = 'none';
-        }
-      });
-    }
-
-    function toggleTheme() {
-      document.body.classList.toggle('dark-theme');
-    }
-  </script>
 </head>
 <body>
   <h1 data-lang="ru">Календарный план исследования</h1>
@@ -117,8 +90,6 @@
     <button class="toggle-button" onclick="switchLanguage('en')">English</button>
     <button class="toggle-button" onclick="toggleTheme()">Переключить тему</button>
   </div>
-  <!-- Ваш контент: таблица и остальная часть страницы -->
-  <!-- Ниже приведен пример таблицы из предыдущего кода -->
   <table>
     <thead>
       <tr>
@@ -133,8 +104,7 @@
       </tr>
     </thead>
     <tbody>
-      <!-- Добавьте сюда строки таблицы из вашего плана -->
-      <!-- Пример для Ноябрь 2024 – Декабрь 2024 -->
+      <!-- Ноябрь 2024 – Декабрь 2024 -->
       <tr>
         <td data-lang="ru"><strong>Ноябрь 2024 – Декабрь 2024</strong></td>
         <td data-lang="en" style="display: none;"><strong>November 2024 – December 2024</strong></td>
@@ -163,7 +133,183 @@
           </span>
         </td>
       </tr>
-      <!-- Повторите для остальных периодов -->
+      <tr>
+        <td data-lang="ru"><strong>Январь 2025</strong></td>
+        <td data-lang="en" style="display: none;"><strong>January 2025</strong></td>
+        <td data-lang="ru"><strong>Публикация первой статьи</strong></td>
+        <td data-lang="en" style="display: none;"><strong>First Article Publication</strong></td>
+        <td data-lang="ru">- Первая статья опубликована.</td>
+        <td data-lang="en" style="display: none;">- First article published.</td>
+        <td data-lang="ru" class="deadline">15 января 2025 года</td>
+        <td data-lang="en" class="deadline" style="display: none;">January 15, 2025</td>
+      </tr>
+      <tr class="details">
+        <td colspan="8">
+          <span data-lang="ru">
+            <strong>Задачи:</strong>
+            <ul>
+              <li>Подготовка статьи о концептуальных основах проекта и обзоре литературы.</li>
+              <li>Рецензирование и корректировка статьи.</li>
+            </ul>
+          </span>
+          <span data-lang="en" style="display: none;">
+            <strong>Tasks:</strong>
+            <ul>
+              <li>Prepare the article on the conceptual framework and literature review.</li>
+              <li>Peer review and revise the article.</li>
+            </ul>
+          </span>
+        </td>
+      </tr>
+      <!-- Февраль 2025 – Март 2025 -->
+      <tr>
+        <td data-lang="ru"><strong>Февраль 2025 – Март 2025</strong></td>
+        <td data-lang="en" style="display: none;"><strong>February 2025 – March 2025</strong></td>
+        <td data-lang="ru"><strong>Разработка модели</strong></td>
+        <td data-lang="en" style="display: none;"><strong>Model Development</strong></td>
+        <td data-lang="ru">- Рабочая модель для извлечения геоданных из текста.</td>
+        <td data-lang="en" style="display: none;">- Working model for extracting geodata from text.</td>
+        <td data-lang="ru" class="deadline">31 марта 2025 года</td>
+        <td data-lang="en" class="deadline" style="display: none;">March 31, 2025</td>
+      </tr>
+      <tr class="details">
+        <td colspan="8">
+          <span data-lang="ru">
+            <strong>Задачи:</strong>
+            <ul>
+              <li>Создание и настройка NLP-модели для идентификации географических сущностей.</li>
+              <li>Тестирование модели на небольших наборах данных.</li>
+              <li>Внесение улучшений на основе результатов тестирования.</li>
+            </ul>
+          </span>
+          <span data-lang="en" style="display: none;">
+            <strong>Tasks:</strong>
+            <ul>
+              <li>Create and fine-tune an NLP model for identifying geographic entities.</li>
+              <li>Test the model on small datasets.</li>
+              <li>Improve the model based on testing results.</li>
+            </ul>
+          </span>
+        </td>
+      </tr>
+      <!-- Март 2025 -->
+      <tr>
+        <td data-lang="ru"><strong>Март 2025</strong></td>
+        <td data-lang="en" style="display: none;"><strong>March 2025</strong></td>
+        <td data-lang="ru"><strong>Публикация второй статьи</strong></td>
+        <td data-lang="en" style="display: none;"><strong>Second Article Publication</strong></td>
+        <td data-lang="ru">- Вторая статья опубликована.</td>
+        <td data-lang="en" style="display: none;">- Second article published.</td>
+        <td data-lang="ru" class="deadline">15 марта 2025 года</td>
+        <td data-lang="en" class="deadline" style="display: none;">March 15, 2025</td>
+      </tr>
+      <tr class="details">
+        <td colspan="8">
+          <span data-lang="ru">
+            <strong>Задачи:</strong>
+            <ul>
+              <li>Подготовка статьи о методологии и первых результатах работы модели.</li>
+              <li>Рецензирование и корректировка статьи.</li>
+            </ul>
+          </span>
+          <span data-lang="en" style="display: none;">
+            <strong>Tasks:</strong>
+            <ul>
+              <li>Prepare the article on methodology and initial model results.</li>
+              <li>Peer review and revise the article.</li>
+            </ul>
+          </span>
+        </td>
+      </tr>
+      <!-- Апрель 2025 – Июнь 2025 -->
+      <tr>
+        <td data-lang="ru"><strong>Апрель 2025 – Июнь 2025</strong></td>
+        <td data-lang="en" style="display: none;"><strong>April 2025 – June 2025</strong></td>
+        <td data-lang="ru"><strong>Создание базы данных</strong></td>
+        <td data-lang="en" style="display: none;"><strong>Database Creation</strong></td>
+        <td data-lang="ru">- Создана векторная пространственная база данных.</td>
+        <td data-lang="en" style="display: none;">- Vector spatial database created.</td>
+        <td data-lang="ru" class="deadline">30 июня 2025 года</td>
+        <td data-lang="en" class="deadline" style="display: none;">June 30, 2025</td>
+      </tr>
+      <tr class="details">
+        <td colspan="8">
+          <span data-lang="ru">
+            <strong>Задачи:</strong>
+            <ul>
+              <li>Интеграция модели с геокодером.</li>
+              <li>Проектирование и создание базы данных.</li>
+              <li>Наполнение базы данных на основе обработанных текстовых данных.</li>
+            </ul>
+          </span>
+          <span data-lang="en" style="display: none;">
+            <strong>Tasks:</strong>
+            <ul>
+              <li>Integrate the model with a geocoder.</li>
+              <li>Design and create the database.</li>
+              <li>Populate the database with processed text data.</li>
+            </ul>
+          </span>
+        </td>
+      </tr>
+      <!-- Июль 2025 -->
+      <tr>
+        <td data-lang="ru"><strong>Июль 2025</strong></td>
+        <td data-lang="en" style="display: none;"><strong>July 2025</strong></td>
+        <td data-lang="ru"><strong>Завершение разработки</strong></td>
+        <td data-lang="en" style="display: none;"><strong>Finalization</strong></td>
+        <td data-lang="ru">- Готовая система и материалы для представления.</td>
+        <td data-lang="en" style="display: none;">- Completed system and presentation materials.</td>
+        <td data-lang="ru" class="deadline">31 июля 2025 года</td>
+        <td data-lang="en" class="deadline" style="display: none;">July 31, 2025</td>
+      </tr>
+      <tr class="details">
+        <td colspan="8">
+          <span data-lang="ru">
+            <strong>Задачи:</strong>
+            <ul>
+              <li>Оптимизация модели и базы данных.</li>
+              <li>Подготовка презентационных материалов и демонстраций для конференций.</li>
+            </ul>
+          </span>
+          <span data-lang="en" style="display: none;">
+            <strong>Tasks:</strong>
+            <ul>
+              <li>Optimize the model and database.</li>
+              <li>Prepare presentation materials and demos for conferences.</li>
+            </ul>
+          </span>
+        </td>
+      </tr>
+      <!-- Август 2025 -->
+      <tr>
+        <td data-lang="ru"><strong>Август 2025</strong></td>
+        <td data-lang="en" style="display: none;"><strong>August 2025</strong></td>
+        <td data-lang="ru"><strong>Публикация третьей статьи и участие в конференциях</strong></td>
+        <td data-lang="en" style="display: none;"><strong>Third Article Publication and Conferences</strong></td>
+        <td data-lang="ru">- Третья статья опубликована.<br>- Результаты представлены на конференциях.</td>
+        <td data-lang="en" style="display: none;">- Third article published.<br>- Results presented at conferences.</td>
+        <td data-lang="ru" class="deadline">15 августа 2025 года</td>
+        <td data-lang="en" class="deadline" style="display: none;">August 15, 2025</td>
+      </tr>
+      <tr class="details">
+        <td colspan="8">
+          <span data-lang="ru">
+            <strong>Задачи:</strong>
+            <ul>
+              <li>Подготовка финальной статьи, обобщающей результаты исследования.</li>
+              <li>Участие в конференциях с презентацией проекта.</li>
+            </ul>
+          </span>
+          <span data-lang="en" style="display: none;">
+            <strong>Tasks:</strong>
+            <ul>
+              <li>Prepare the final article summarizing research results.</li>
+              <li>Participate in conferences with project presentations.</li>
+            </ul>
+          </span>
+        </td>
+      </tr>
     </tbody>
   </table>
 
@@ -174,5 +320,33 @@
     <li data-lang="en" style="display: none;"><strong>December 31, 2024</strong>: Completion of literature review and planning.</li>
     <!-- Добавьте остальные дедлайны -->
   </ul>
+
+  <script>
+    function toggleDetails() {
+      var details = document.querySelectorAll('.details');
+      details.forEach(function(row) {
+        if (row.style.display === 'table-row') {
+          row.style.display = 'none';
+        } else {
+          row.style.display = 'table-row';
+        }
+      });
+    }
+
+    function switchLanguage(lang) {
+      var elements = document.querySelectorAll('[data-lang]');
+      elements.forEach(function(el) {
+        if (el.getAttribute('data-lang') === lang) {
+          el.style.display = '';
+        } else {
+          el.style.display = 'none';
+        }
+      });
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark-theme');
+    }
+  </script>
 </body>
 </html>
